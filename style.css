@@ -100,7 +100,6 @@
   margin: 15% auto; /* Para centrar la ventana modal */
   padding: 20px;
   border: 1px solid #888;
-  width: 300px; /* Ancho de la ventana modal */
   }
   
   .modal-content p {
