@@ -4,35 +4,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultado = document.getElementById('resultado');
     const modal = document.getElementById('modal');
 
-    // Mostrar el modal de carga
     function mostrarModal() {
         modal.style.display = 'flex';
     }
 
-    // Ocultar el modal de carga
     function ocultarModal() {
         modal.style.display = 'none';
     }
 
-    // Obtener un nombre aleatorio
     function obtenerNombreAleatorio() {
         const nombres = textarea.value
-            .split('\n') // Dividir los nombres por línea
-            .map(nombre => nombre.trim()) // Quitar espacios extra
-            .filter(nombre => nombre !== ''); // Eliminar entradas vacías
+            .split('\n') 
+            .map(nombre => nombre.trim()) 
+            .filter(nombre => nombre !== ''); 
 
         if (nombres.length === 0) {
             resultado.innerHTML = '<p style="color: red;">Por favor, escribe al menos un nombre.</p>';
             return;
         }
 
-        mostrarModal();
+        mostrarModal(); 
 
         setTimeout(() => {
-            ocultarModal();
+            ocultarModal(); 
             const nombreAleatorio = nombres[Math.floor(Math.random() * nombres.length)];
             resultado.innerHTML = `<p>El nombre seleccionado es: <strong>${nombreAleatorio}</strong></p>`;
-        }, 1000); // Simular un tiempo de espera de 1 segundo
+        }, 1000);
     }
 
     btnObtener.addEventListener('click', obtenerNombreAleatorio);
